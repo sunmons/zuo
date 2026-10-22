@@ -1,0 +1,10 @@
+---
+title:
+- type: main
+  text: 附釋音春秋經傳集解
+creator:
+- role: author
+  text: 左丘明、杜預、陸德明
+css: "style.css"
+lang: zh
+...

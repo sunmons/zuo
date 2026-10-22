@@ -1,0 +1,86 @@
+body {
+    line-height: 160%;
+    text-align: justify;
+}
+
+h1, h2 {
+    font-size: 1em;
+    font-family: "KaiTi", "楷体", "STKaiti", serif;
+}
+
+h2 {
+    margin-left: 2rem;
+    counter-reset: para;   /* 每个 h2 重置计数器 */
+    display: none;
+}
+
+p {
+    font-weight: normal;
+    font-family: "KaiTi", "楷体", "STKaiti", serif;
+}
+
+h2 ~ p {
+    counter-increment: para;  /* 只对 p 递增 */
+}
+
+h2 ~ p::before {
+    content: counter(para) " ";
+    font-weight: normal;
+    font-size: .75em;
+    font-family: 'Courier New', Courier, monospace;
+    color: gray;
+    vertical-align: middle;
+}
+
+blockquote { /* for chunqiu */
+    margin-left: 2em;
+    margin-right: auto;
+    counter-reset: bq-para;   /* 用独立的计数器名，避免和外部冲突 */
+}
+
+blockquote::before {
+    content: "〔經〕";
+    font-family: "KaiTi", "楷体", "STKaiti", serif;
+}
+
+blockquote p { /* numbering for chunqiu */
+    counter-increment: bq-para;
+}
+
+blockquote p::before { /* numbering for chunqiu */
+    content: counter(bq-para) " ";
+    font-weight: normal;
+    font-size: .75em;
+    font-family: 'Courier New', Courier, monospace;
+    color: gray;
+    vertical-align: middle;
+}
+
+em { /* for note */
+    font-size: .75em;
+    color: #444;
+    font-family: "PingFang SC", "Microsoft YaHei Light", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    vertical-align: baseline;
+}
+
+a {
+    vertical-align: baseline;
+}
+
+img { /* for extb character */
+    width: 1.2em;
+    height: 1.2em;
+    vertical-align: text-bottom;
+}
+
+span { /* for shiwen */
+    color: blue;
+    border-bottom: dotted 1px;
+}
+
+q {
+    quotes: '〔' '〕';
+    color: gray;
+}
